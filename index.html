@@ -1,78 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yoga Website</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="indexx.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Articles</a></li>
-        <li><a href="#">Classes</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#" onclick="openSignIn()">Sign In</a></li>
-        <li><a href="#" onclick="openSignUp()">Sign Up</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Yoga Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Classes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trainers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="loginLink">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="signupLink">Sign Up</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-  </header>
-  
-  <section class="hero">
-    <h1>Welcome to our Yoga Website</h1>
-    <p>Discover the benefits of yoga and improve your physical and mental well-being.</p>
-    <a href="#" class="cta-button">Book a Class</a>
-  </section>
-  
-  <section class="articles">
-    <h2>Latest Articles</h2>
-    <div class="article">
-      <h3>Article Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, elit ac gravida gravida.</p>
-      <a href="#">Read More</a>
-    </div>
-    <div class="article">
-      <h3>Article Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque gravida, elit ac gravida gravida.</p>
-      <a href="#">Read More</a>
-    </div>
-  </section>
 
-  <div id="signInModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeSignIn()">&times;</span>
-      <h2>Sign In</h2>
-      <form id="signInForm" onsubmit="return validateSignIn()">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Sign In">
-      </form>
-    </div>
-  </div>
+    <!-- Home Section -->
+    <section id="home" class="mt-5">
+        <div class="container">
+            <h1>Welcome to Our Yoga Studio</h1>
+            <p>Experience the benefits of yoga and improve your well-being.</p>
+            <button class="btn btn-primary" id="bookClassBtn">Book a session</button>
+        </div>
+    </section>
 
-  <div id="signUpModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeSignUp()">&times;</span>
-      <h2>Sign Up</h2>
-      <form id="signUpForm" onsubmit="return validateSignUp()">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <input type="submit" value="Sign Up">
-      </form>
-    </div>
-  </div>
-  
-  <footer>
-    <p>&copy; 2023 Yoga Website. All rights reserved.</p>
-  </footer>
+    <!-- Classes Section -->
+    <section id="classes" class="mt-5">
+        <div class="container">
+            <h2>Upcoming Classes</h2>
+            <!-- Class cards go here -->
+            <div class="card-deck">
+                <div class="card">
+                    <img src="assests/class-1-card.jpg" class="card-img-top" alt="Class 1">
+                    <div class="card-body">
+                        <h5 class="card-title">The Ultimate yoga</h5>
+                        <p class="card-text">Join our Yoga Class 1 to improve flexibility and relax your mind.</p>
+                        <button class="btn btn-primary book-btn" data-class="Class 1">Book Now</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assests/card4.avif" class="card-img-top" alt="Class 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Yoga Brisks</h5>
+                        <p class="card-text">Experience the benefits of Yoga Class 2 for strength and balance.</p>
+                        <button class="btn btn-primary book-btn" data-class="Class 2">Book Now</button>
+                    </div>
+                </div>
+                <!-- Add more class cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="mt-5">
+        <div class="container">
+            <h2>Our Trainers</h2>
+            <!-- Trainer cards go here -->
+            <div class="card-deck">
+                <div class="card">
+                    <img src="assests/trainer1.jpg" class="card-img-top" alt="Trainer 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Acharya dev</h5>
+                        <p class="card-text">Certified Yoga Instructor with 10 years of experience.</p>
+                        <button class="btn btn-primary book-btn" data-class="Class 2">Book Now</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assests/trainer3.jpg" class="card-img-top" alt="Trainer 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Siva vaibov</h5>
+                        <p class="card-text">Experienced Yoga Teacher specialized in Vinyasa Flow.</p>
+                        <button class="btn btn-primary book-btn" data-class="Class 2">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        // Login form swal
+        document.getElementById("loginLink").addEventListener("click", function() {
+            swal({
+                title: "Login",
+                text: "Please enter your login details:",
+                content: {
+                    element: "div",
+                    attributes: {
+                        innerHTML: `
+                            <label for="loginEmail">Email:</label>
+                            <input id="loginEmail" class="swal2-input" type="email" placeholder="Email">
+                            <label for="loginPassword">Password:</label>
+                            <input id="loginPassword" class="swal2-input" type="password" placeholder="Password">
+                        `,
+                    },
+                },
+                buttons: {
+                    cancel: true,
+                    confirm: {
+                        text: "Submit",
+                        closeModal: false,
+                    },
+                },
+            }).then((result) => {
+                if (result) {
+                    const email = document.getElementById("loginEmail").value;
+                    const password = document.getElementById("loginPassword").value;
+
+                    // Perform login validation or other operations
+                    if (email && password) {
+                        // Perform login validation or other operations
+                        // Example: Validate the login details
+                        if (email === "example@example.com" && password === "password") {
+                            swal("Success", "Logged in successfully!", "success");
+                        } else {
+                            swal("Error", "Invalid email or password. Please try again.", "error");
+                        }
+                    } else {
+                        swal("Error", "Please fill in all the details.", "error");
+                    }
+                }
+            });
+        });
+
+        // Sign Up form swal
+        document.getElementById("signupLink").addEventListener("click", function() {
+            swal({
+                title: "Sign Up",
+                text: "Please enter your details:",
+                content: {
+                    element: "div",
+                    attributes: {
+                        innerHTML: `
+                            <label for="signupName">Name:</label>
+                            <input id="signupName" class="swal2-input" type="text" placeholder="Name">
+                            <label for="signupEmail">Email:</label>
+                            <input id="signupEmail" class="swal2-input" type="email" placeholder="Email">
+                            <label for="signupPassword">Password:</label>
+                            <input id="signupPassword" class="swal2-input" type="password" placeholder="Password">
+                        `,
+                    },
+                },
+                buttons: {
+                    cancel: true,
+                    confirm: {
+                        text: "Submit",
+                        closeModal: false,
+                    },
+                },
+            }).then((result) => {
+                if (result) {
+                    const name = document.getElementById("signupName").value;
+                    const email = document.getElementById("signupEmail").value;
+                    const password = document.getElementById("signupPassword").value;
+
+                    // Perform sign up validation or other operations
+                    if (name && email && password) {
+                        // Perform sign up validation or other operations
+                        // Example: Save the user details or perform sign up actions
+                        const userDetails = {
+                            name: name,
+                            email: email,
+                            password: password,
+                        };
+
+                        // Save user details in JSON file or perform other operations
+                        const json = JSON.stringify(userDetails);
+                        console.log(json);
+
+                        // You can send the JSON data to a server to save it in a file or database
+                        // Example: using fetch API to send the JSON data to a server endpoint
+                        fetch("/saveUserDetails", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: json,
+                        })
+                        .then((response) => {
+                            if (response.ok) {
+                                swal("Success", "Account created successfully!", "success");
+                            } else {
+                                swal("Error", "Failed to create the account. Please try again later.", "error");
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            swal("Error", "An error occurred while creating the account. Please try again later.", "error");
+                        });
+                    } else {
+                        swal("Error", "Please fill in all the details.", "error");
+                    }
+                }
+            });
+        });
+
+        // Book a Class swal
+        document.getElementById("bookClassBtn").addEventListener("click", function() {
+            swal({
+                title: "Book a Class",
+                text: "Please enter your details:",
+                content: {
+                    element: "div",
+                    attributes: {
+                        innerHTML: `
+                            <label for="nameInput">Name:</label>
+                            <input id="nameInput" class="swal2-input" type="text" placeholder="Name">
+                            <label for="contactInput">Contact Number:</label>
+                            <input id="contactInput" class="swal2-input" type="text" placeholder="Contact Number">
+                            <label for="timeSlotInput">Time Slot:</label>
+                            <select id="timeSlotInput" class="swal2-input">
+                                <option value="8:00 AM - 9:00 AM">8:00 AM - 9:00 AM</option>
+                                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                                <option value="3:00 PM - 4:00 PM">3:00 PM - 4:00 PM</option>
+                            </select>
+                        `,
+                    },
+                },
+                buttons: {
+                    cancel: true,
+                    confirm: {
+                        text: "Submit",
+                        closeModal: false,
+                    },
+                },
+            }).then((result) => {
+                if (result) {
+                    const name = document.getElementById("nameInput").value;
+                    const contactNumber = document.getElementById("contactInput").value;
+                    const timeSlot = document.getElementById("timeSlotInput").value;
+
+                    if (name && contactNumber && timeSlot) {
+                        const classDetails = {
+                            name: name,
+                            contactNumber: contactNumber,
+                            timeSlot: timeSlot,
+                        };
+
+                        // Perform class booking or other operations
+                        // Example: Save the class details or perform booking actions
+                        const json = JSON.stringify(classDetails);
+                        console.log(json);
+
+                        // You can send the JSON data to a server to save it in a file or database
+                        // Example: using fetch API to send the JSON data to a server endpoint
+                        fetch("/bookClass", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: json,
+                        })
+                        .then((response) => {
+                            if (response.ok) {
+                                swal("Success", "Class booked successfully!", "success");
+                            } else {
+                                swal("Error", "Failed to book the class. Please try again later.", "error");
+                            }
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                            swal("Error", "An error occurred while booking the class. Please try again later.", "error");
+                        });
+                    } else {
+                        swal("Error", "Please fill in all the details.", "error");
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
