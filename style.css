@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff; /* Font color for navigation links */
+    text-decoration: none;
+  }
+  
+  .hero {
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px;
+    color: #fff; /* Font color for hero section */
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff; /* Font color for CTA button */
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .articles {
+    padding: 50px;
+  }
+  
+  .article {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff; /* Font color for footer */
+  }
+  
+  /* Change color of text above "Book Now" button */
+  .hero h1,
+  .hero p {
+    color: #000; /* Change text color to black */
+  }
+  
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+  }
+  
+  .close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
